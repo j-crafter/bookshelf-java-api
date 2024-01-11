@@ -1,0 +1,12 @@
+$ docker swarm init
+Error response from daemon: could not choose an IP address to advertise since this system has multiple addresses on interface wlo1 (2a01:e0a:a4c:9990:999f:4016:2510:4343 and 2a01:e0a:a4c:9990:1a3:e195:51fb:b80c) - specify one with --advertise-addr
+$ docker swarm init --advertise-addr 2a01:e0a:a4c:9990:999f:4016:2510:4343
+Swarm initialized: current node (x207rrt5k23oncxyhqu3pa5d3) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-6b40koqklhak5zmn3avqkin3htrm8on0e5r3uw843okxm4boeo-8cgxwswwutxvb9gn7fi6l0v3z [2a01:e0a:a4c:9990:999f:4016:2510:4343]:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
+$ docker stack deploy bookshelf --compose-file docker-compose.yml
